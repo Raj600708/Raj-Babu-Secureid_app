@@ -1,10 +1,11 @@
 const express = require('express');
+const path = require('path');
 require('dotenv').config();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const connectDB = require("./config/DB");
 const authRoutes = require('./routes/authRoutes');
-const path = require('path');
+// const path = require('path');
 
 connectDB();
 

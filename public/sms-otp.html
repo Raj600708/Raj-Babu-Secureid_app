@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureID - Verify Mobile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="brand-sidebar">
+    <div class="brand-icon">🔐</div>
+        <h2>SecureID</h2>
+        <p>Secure access to your account</p>
+        <p class="footer-note">© 2026 SecureID. All rights reserved.</p>
+</div>
+    <div class="card">
+        <div class="logo">📱</div>
+        <h1>Verify your mobile</h1>
+    <p class="subtitle" id="phoneStep">
+        Enter your mobile number to receive a code
+    </p>
+
+    <div id="alertBox"></div>
+
+        <!-- Phone number entry (shown first) -->
+    <form id="phoneForm">
+        <div class="form-group">
+            <label for="phone">Mobile Number</label>
+            <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+        </div>
+        <button type="submit" class="btn-primary" id="sendOtpBtn">Send Code</button>
+    </form>
+
+        <!-- OTP entry (hidden until code is sent) -->
+    <form id="otpForm" style="display:none;">
+        <p class="subtitle">
+            Enter the 6-digit code sent to<br>
+            <strong id="userPhone"></strong>
+            &nbsp;<a id="changeNumber" style="cursor:pointer;">Change</a>
+        </p>
+
+        <div class="otp-inputs">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="0">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="1">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="2">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="3">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="4">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="5">
+        </div>
+
+        <p class="timer" id="timerText">Code expires in <span id="countdown">10:00</span></p>
+
+        <button type="submit" class="btn-primary" id="verifyBtn">Verify</button>
+    </form>
+
+    <p class="resend-link" id="resendWrap" style="display:none;">
+        Didn't receive the code?
+        <a id="resendLink">Resend code</a>
+    </p>
+    </div>
+</div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/sms-otp.js"></script>
+</body>
+</html>

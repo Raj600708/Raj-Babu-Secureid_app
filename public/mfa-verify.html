@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureID - Verify MFA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="brand-sidebar">
+        <div class="brand-icon">🔐</div>
+            <h2>SecureID</h2>
+            <p>Secure access to your account</p>
+            <p class="footer-note">© 2026 SecureID. All rights reserved.</p>
+        </div>
+    <div class="card">
+        <div class="logo">🛡️</div>
+        <h1 id="pageTitle">Verify your code</h1>
+        <p class="subtitle" id="pageSubtitle"></p>
+
+    <div id="alertBox"></div>
+
+    <div class="qr-box" id="qrSection" style="display:none;">
+        <img id="qrImage" src="" alt="QR Code">
+        <p class="secret-key">Can't scan? Enter setup key: <strong id="secretKey"></strong></p>
+    </div>
+
+    <form id="verifyForm">
+        <div class="otp-inputs">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="0">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="1">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="2">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="3">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="4">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-box" data-index="5">
+        </div>
+
+        <p class="timer" id="timerText"></p>
+
+        <button type="submit" class="btn-primary" id="verifyBtn">Verify</button>
+    </form>
+
+    <p class="resend-link" id="resendWrap">
+        <a id="backLink" style="cursor:pointer;">← Choose a different method</a>
+    </p>
+    </div>
+</div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/mfa-verify.js"></script>
+</body>
+</html>

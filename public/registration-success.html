@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureID - Success</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="brand-sidebar">
+    <div class="brand-icon">🔐</div>
+        <h2>SecureID</h2>
+        <p>Secure access to your account</p>
+        <p class="footer-note">© 2026 SecureID. All rights reserved.</p>
+</div>
+    <div class="card" style="text-align:center;">
+        <div class="logo" style="font-size:50px;">✅</div>
+        <h1>Account created!</h1>
+        <p class="subtitle">Your account has been successfully created and MFA is enabled.</p>
+
+    <div style="text-align:left; margin: 24px 0;">
+        <p style="margin-bottom:10px;">✔️ Email verified</p>
+        <p style="margin-bottom:10px;">✔️ Mobile verified</p>
+        <p style="margin-bottom:10px;">✔️ MFA enabled</p>
+    </div>
+
+    <button class="btn-primary" id="continueBtn">Continue to Login</button>
+    </div>
+</div>
+
+    <script>
+    document.getElementById('continueBtn').addEventListener('click', () => {
+        sessionStorage.removeItem('pendingEmail');
+        sessionStorage.removeItem('pendingPhone');
+        window.location.href = 'login.html';
+    });
+    </script>
+</body>
+</html>

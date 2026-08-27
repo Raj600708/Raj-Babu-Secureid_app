@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 26px;
+    color: #1f2937;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #374151;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 13px;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #4f46e5;
+}
+
+.btn-primary:disabled {
+    background: #a5a6f5;
+    cursor: not-allowed;
+}
+
+.alert {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.alert-error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.alert-success {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+/* OTP page specific */
+.otp-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.otp-inputs input {
+    width: 45px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.timer {
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.resend-link {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.resend-link a {
+    color: #6366f1;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Sidebar hidden by default (mobile view) */
+.brand-sidebar {
+    display: none;
+}
+
+
+/* MFA method selection cards */
+.method-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.method-option:hover {
+    border-color: #a5a6f5;
+}
+
+.method-option.selected {
+    border-color: #6366f1;
+    background: #eef2ff;
+}
+
+.method-option .method-icon {
+    font-size: 22px;
+}
+
+.method-option .method-text strong {
+    display: block;
+    font-size: 14px;
+    color: #1f2937;
+}
+
+.method-option .method-text span {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.qr-box {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.qr-box img {
+    width: 180px;
+    height: 180px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.secret-key {
+    text-align: center;
+    font-size: 12px;
+    color: #6b7280;
+    word-break: break-all;
+    margin-top: 8px;
+}
+
+/* ===== Desktop/Web Layout — SecureID Sidebar ===== */
+@media (min-width: 900px) {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1100px;
+        display: flex;
+        min-height: 100vh;
+        align-items: stretch;
+        box-shadow: 0 0 40px rgba(0,0,0,0.1);
+    }
+
+    .card {
+        flex: 1;
+        box-shadow: none;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+
+
+    .brand-sidebar {
+        flex: 1;
+        background: linear-gradient(160deg, #6366f1 0%, #4338ca 100%);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        text-align: center;
+        order: -1;
+    }
+
+    .brand-sidebar .brand-icon {
+        font-size: 48px;
+        margin-bottom: 16px;
+    }
+
+    .brand-sidebar h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .brand-sidebar p {
+        color: rgba(255,255,255,0.8);
+        font-size: 14px;
+    }
+
+    .brand-sidebar .footer-note {
+        position: absolute;
+        bottom: 20px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.6);
+    }
+}

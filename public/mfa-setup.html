@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureID - Set up MFA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="brand-sidebar">
+        <div class="brand-icon">🔐</div>
+            <h2>SecureID</h2>
+            <p>Secure access to your account</p>
+            <p class="footer-note">© 2026 SecureID. All rights reserved.</p>
+    </div>
+    <div class="card">
+        <div class="logo">🛡️</div>
+        <h1>Set up Multi-Factor Auth</h1>
+        <p class="subtitle">Add an extra layer of security to protect your account</p>
+
+    <div id="alertBox"></div>
+
+        <div class="method-option" data-method="authenticator">
+            <span class="method-icon">📲</span>
+        <div class="method-text">
+            <strong>Authenticator App</strong>
+            <span>Google Authenticator, Authy, etc.</span>
+        </div>
+    </div>
+
+    <div class="method-option" data-method="sms">
+        <span class="method-icon">💬</span>
+        <div class="method-text">
+            <strong>SMS Authentication</strong>
+            <span>Receive a code on your phone</span>
+        </div>
+    </div>
+
+    <div class="method-option" data-method="email">
+        <span class="method-icon">📧</span>
+        <div class="method-text">
+            <strong>Email Authentication</strong>
+            <span>Receive a code on your email</span>
+        </div>
+    </div>
+
+    <button class="btn-primary" id="continueBtn">Continue</button>
+    </div>
+</div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/mfa-setup.js"></script>
+</body>
+</html>
